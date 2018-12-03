@@ -168,8 +168,8 @@
                 
                 
                 $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
-                $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
-                $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
+                $('#boton' + numeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
+                $('#boton' + numeroCaja).replaceWith('<input id="caja3" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
 
                 $('#comprobar').append('<button id="comprueba" class="btn  btn-block" > COMPROBAR </button> ');
 
@@ -189,6 +189,8 @@
                 $('#botones').text('');
                 $('#comprobar').text('').unbind();
                 $('#caja').unbind();
+                $('#caja2').unbind();
+                $('#caja3').unbind();
                 cambiaBotones();
                 $('#progreso').raty({
                     readOnly: true,
@@ -264,9 +266,14 @@
 
             function comprueba() {
                 var verboLeido = $('#caja').val().toUpperCase();
+                var VerboLeido = $('#caja2').val().toUpperCase();
+                var veRboLeido = $('#caja3').val().toUpperCase();
+                
                 var verboCorrecto = verbos[siguiente][numeroCaja - 1].toUpperCase();
+                var VerboCorrecto = verbos[siguiente_segunda][numeroCaja - 1].toUpperCase();
+                var veRboCorrecto = verbos[siguiente_tercera][numeroCaja - 1].toUpperCase();
 
-                if (verboLeido === verboCorrecto) {
+                if (verboLeido === verboCorrecto && VerboLeido === VerboCorrecto && veRboLeido === veRboCorrecto) {
                     $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
                         sigue();
                         iniciaTemporizador()

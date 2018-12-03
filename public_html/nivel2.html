@@ -161,7 +161,7 @@
                 
                 
                 $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
-                $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
+                $('#boton' + numeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
 
 
                 $('#comprobar').append('<button id="comprueba" class="btn  btn-block" > COMPROBAR </button> ');
@@ -176,6 +176,12 @@
                         comprueba();
                     }
                 });
+                
+                $('#caja2').focus().keypress(function (e) {
+                    if (e.which === 13) { //13 es la tecla enter del teclado
+                        comprueba();
+                    }
+                });
 
             }
 
@@ -183,6 +189,7 @@
                 $('#botones').text('');
                 $('#comprobar').text('').unbind();
                 $('#caja').unbind();
+                $('#caja2').unbind();
                 cambiaBotones();
                 $('#progreso').raty({
                     readOnly: true,
@@ -258,21 +265,11 @@
 
             function comprueba() {
                 var verboLeido = $('#caja').val().toUpperCase();
+                var VerboLeido = $('#caja2').val().toUpperCase();
                 var verboCorrecto = verbos[siguiente][numeroCaja - 1].toUpperCase();
                 var VerboCorrecto = verbos[siguiente_segunda][numeroCaja - 1].toUpperCase();
 
-                if (verboLeido === verboCorrecto) {
-                    $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
-                        sigue();
-                        iniciaTemporizador()
-                    });
-                    contador += 0.50;
-                } else {
-                    $('#comprueba').html('PRUEBA DE NUEVO!').addClass("btn-danger");
-                    contador = 0;
-                }
-                
-                if (verboLeido === VerboCorrecto) {
+                if (verboLeido === verboCorrecto && VerboLeido === VerboCorrecto) {
                     $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
                         sigue();
                         iniciaTemporizador()
