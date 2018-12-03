@@ -259,8 +259,20 @@
             function comprueba() {
                 var verboLeido = $('#caja').val().toUpperCase();
                 var verboCorrecto = verbos[siguiente][numeroCaja - 1].toUpperCase();
+                var VerboCorrecto = verbos[siguiente_segunda][numeroCaja - 1].toUpperCase();
 
                 if (verboLeido === verboCorrecto) {
+                    $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
+                        sigue();
+                        iniciaTemporizador()
+                    });
+                    contador += 0.50;
+                } else {
+                    $('#comprueba').html('PRUEBA DE NUEVO!').addClass("btn-danger");
+                    contador = 0;
+                }
+                
+                if (verboLeido === VerboCorrecto) {
                     $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
                         sigue();
                         iniciaTemporizador()
