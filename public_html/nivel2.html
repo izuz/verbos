@@ -66,7 +66,7 @@
                     <div id="botones" class="btn-group btn-block"></div><br><br>
                     <div id ="comprobar"></div>
                     <h3>ESTAS EN EL NIVEL 2</h3>
-                    <div class="padre"><a href="index.html">VOLVER A ELEGIR NIVEL</a></div>
+                    <a href="index.html"><div class="padre">VOLVER A ELEGIR NIVEL</div></a>
                 </div>
                 <div class="col-xs-2"></div>
             </div> 
@@ -78,7 +78,7 @@
             var siguiente;
             var siguiente_segunda;
             var numeroCaja;
-            var NumeroCaja;
+            var numeroCaja2;
             var contador = 0;
             var contadorEstrellas = 0;
             var progreso;
@@ -148,7 +148,7 @@
 
             function cambiaBotones() {
                 numeroCaja = Math.floor(Math.random() * 3) + 1;
-                //NumeroCaja = Math.floor(Math.random() * 3) + 1;
+                numeroCaja2 = Math.floor(Math.random() * 3) + 1;
                 siguiente = Math.floor(Math.random() * verbos.length);
                 siguiente_segunda = Math.floor(Math.random() * verbos.length);
 
@@ -157,14 +157,14 @@
                 $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente][2] + ' </button> ');
                 $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente][3] + ' </button> ');
 
-                $('#botones').append('<button id="boton1" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][0] + ' </button> ');
-                $('#botones').append('<button id="boton2" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][1] + ' </button> ');
-                $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][2] + ' </button> ');
-                $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente_segunda][3] + ' </button> ');
+                $('#botones').append('<button id="boton21" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][0] + ' </button> ');
+                $('#botones').append('<button id="boton22" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][1] + ' </button> ');
+                $('#botones').append('<button id="boton23" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][2] + ' </button> ');
+                $('#botones').append('<button id="boton24" class="btn btn-info " style="width:25%;">' + verbos[siguiente_segunda][3] + ' </button> ');
 
 
                 $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
-                $('#boton' + numeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
+                $('#boton2' + numeroCaja2).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
 
 
                 $('#comprobar').append('<button id="comprueba" class="btn  btn-block" > COMPROBAR </button> ');
@@ -211,7 +211,7 @@
                 var verboLeido = $('#caja').val().toUpperCase();
                 var VerboLeido = $('#caja2').val().toUpperCase();
                 var verboCorrecto = verbos[siguiente][numeroCaja - 1].toUpperCase();
-                var VerboCorrecto = verbos[siguiente_segunda][numeroCaja - 1].toUpperCase();
+                var VerboCorrecto = verbos[siguiente_segunda][numeroCaja2 - 1].toUpperCase();
 
                 if (verboLeido === verboCorrecto && VerboLeido === VerboCorrecto) {
                     $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
