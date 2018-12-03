@@ -76,7 +76,9 @@
         <script>
 
             var siguiente;
+            var siguiente_segunda;
             var numeroCaja;
+            var NumeroCaja;
             var contador = 0;
             var contadorEstrellas = 0;
             var progreso;
@@ -146,6 +148,7 @@
 
             function cambiaBotones() {
                 numeroCaja = Math.floor(Math.random() * 3) + 1;
+                NumeroCaja = Math.floor(Math.random() * 3) + 1;
                 siguiente = Math.floor(Math.random() * verbos.length);
                 siguiente_segunda = Math.floor(Math.random() * verbos.length);
 
@@ -161,7 +164,7 @@
 
 
                 $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
-                $('#boton' + numeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
+                $('#boton' + NumeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
 
 
                 $('#comprobar').append('<button id="comprueba" class="btn  btn-block" > COMPROBAR </button> ');

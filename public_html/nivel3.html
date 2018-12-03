@@ -76,6 +76,8 @@
         <script>
 
             var siguiente;
+            var siguiente_segunda;
+            var siguiente_tercera;
             var numeroCaja;
             var contador = 0;
             var contadorEstrellas = 0;
@@ -178,6 +180,18 @@
                 });
 
                 $('#caja').focus().keypress(function (e) {
+                    if (e.which === 13) { //13 es la tecla enter del teclado
+                        comprueba();
+                    }
+                });
+                
+                $('#caja2').focus().keypress(function (e) {
+                    if (e.which === 13) { //13 es la tecla enter del teclado
+                        comprueba();
+                    }
+                });
+                
+                $('#caja3').focus().keypress(function (e) {
                     if (e.which === 13) { //13 es la tecla enter del teclado
                         comprueba();
                     }
