@@ -153,13 +153,13 @@
                 $('#botones').append('<button id="boton2" class="btn btn-warning" style="width:25%;">' + verbos[siguiente][1] + ' </button> ');
                 $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente][2] + ' </button> ');
                 $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente][3] + ' </button> ');
-                
+
                 $('#botones').append('<button id="boton1" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][0] + ' </button> ');
                 $('#botones').append('<button id="boton2" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][1] + ' </button> ');
                 $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][2] + ' </button> ');
                 $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente_segunda][3] + ' </button> ');
-                
-                
+
+
                 $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
                 $('#boton' + numeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
 
@@ -176,7 +176,7 @@
                         comprueba();
                     }
                 });
-                
+
                 $('#caja2').focus().keypress(function (e) {
                     if (e.which === 13) { //13 es la tecla enter del teclado
                         comprueba();
@@ -203,65 +203,6 @@
                     cambiaEstrellasGrandes();
                 }
             }
-
-            function cambiaEstrellasGrandes() {
-                $('#estrellas').raty({
-                    readOnly: true,
-                    score: contadorEstrellas,
-                    number: contadorEstrellas,
-                    halfShow: false,
-                    starType: 'i'
-                });
-                numeroVerbos += 10;
-                $('#estrellas').find('i')
-                        .removeClass("star-on-png");
-                switch (numeroVerbos) {
-                    case 10:
-                        $('#estrellas').find('i').addClass("fa fa-smile-o fa-2x amarillo");
-                        break;
-                    case 20:
-                        $('#estrellas').find('i').addClass("fa fa-bolt fa-2x amarillo");
-                        break;
-                    case 30:
-                        $('#estrellas').find('i').addClass("fa fa-star fa-2x amarillo");
-                        break;
-                    case 40:
-                        $('#estrellas').find('i').addClass("fa fa-thumbs-up fa-2x amarillo");
-                        break;
-                    case 50:
-                        $('#estrellas').find('i').addClass("fa fa-sun-o fa-2x amarillo");
-                        break;
-                    case 60:
-                        $('#estrellas').find('i').addClass("fa fa-university fa-2x amarillo");
-                        break;
-                    case 70:
-                        $('#estrellas').find('i').addClass("fa fa-rebel fa-2x amarillo");
-                        break;
-                    case 80:
-                        $('#estrellas').find('i').addClass("fa fa-graduation-cap fa-2x amarillo");
-                        break;
-                }
-
-            }
-
-            // function comprueba(){
-            //   var verboLeido = $('#caja').val().toUpperCase();
-            // var verboCorrecto = verbos[siguiente][numeroCaja-1].toUpperCase();
-            //if (true) { //( verboLeido === verboCorrecto){
-            //  $('#comprueba').text('CORRECTO!')
-            //         .addClass("btn-success")
-            //       .fadeOut("slow")
-            //     .fadeIn("slow", function(){
-            //                     sigue();
-            //                 });
-            //  contador += 0.50; 
-
-            //}
-            //else {
-            //  $('#comprueba').text(verboCorrecto).addClass("btn-danger");
-            //contador = 0;
-            // }
-            // }
 
             function comprueba() {
                 var verboLeido = $('#caja').val().toUpperCase();

@@ -155,18 +155,18 @@
                 $('#botones').append('<button id="boton2" class="btn btn-warning" style="width:25%;">' + verbos[siguiente][1] + ' </button> ');
                 $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente][2] + ' </button> ');
                 $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente][3] + ' </button> ');
-                
-                 $('#botones').append('<button id="boton1" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][0] + ' </button> ');
+
+                $('#botones').append('<button id="boton1" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][0] + ' </button> ');
                 $('#botones').append('<button id="boton2" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][1] + ' </button> ');
                 $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_segunda][2] + ' </button> ');
                 $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente_segunda][3] + ' </button> ');
-                
+
                 $('#botones').append('<button id="boton1" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_tercera][0] + ' </button> ');
                 $('#botones').append('<button id="boton2" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_tercera][1] + ' </button> ');
                 $('#botones').append('<button id="boton3" class="btn btn-warning" style="width:25%;">' + verbos[siguiente_tercera][2] + ' </button> ');
                 $('#botones').append('<button id="boton4" class="btn btn-info " style="width:25%;">' + verbos[siguiente_tercera][3] + ' </button> ');
-                
-                
+
+
                 $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
                 $('#boton' + numeroCaja).replaceWith('<input id="caja2" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
                 $('#boton' + numeroCaja).replaceWith('<input id="caja3" class="input-small text-center" style="float:left; height: 34px; width:25%;">');
@@ -244,31 +244,11 @@
                 }
 
             }
-
-            // function comprueba(){
-            //   var verboLeido = $('#caja').val().toUpperCase();
-            // var verboCorrecto = verbos[siguiente][numeroCaja-1].toUpperCase();
-            //if (true) { //( verboLeido === verboCorrecto){
-            //  $('#comprueba').text('CORRECTO!')
-            //         .addClass("btn-success")
-            //       .fadeOut("slow")
-            //     .fadeIn("slow", function(){
-            //                     sigue();
-            //                 });
-            //  contador += 0.50; 
-
-            //}
-            //else {
-            //  $('#comprueba').text(verboCorrecto).addClass("btn-danger");
-            //contador = 0;
-            // }
-            // }
-
             function comprueba() {
                 var verboLeido = $('#caja').val().toUpperCase();
                 var VerboLeido = $('#caja2').val().toUpperCase();
                 var veRboLeido = $('#caja3').val().toUpperCase();
-                
+
                 var verboCorrecto = verbos[siguiente][numeroCaja - 1].toUpperCase();
                 var VerboCorrecto = verbos[siguiente_segunda][numeroCaja - 1].toUpperCase();
                 var veRboCorrecto = verbos[siguiente_tercera][numeroCaja - 1].toUpperCase();
